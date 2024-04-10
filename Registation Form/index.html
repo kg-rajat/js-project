@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form validation</title>
+</head>
+<body bgcolor="yellow">
+  <center>
+    <marquee> 
+      <h1> Registation Form</h1>
+    </marquee>
+    <form onsubmit="return validation()">
+    <table>
+      <tr>
+        <td>User Name</td>
+        <td> <input type="text" id="user"><span id="username"></span>  </td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td> <input type="password" id="pass"> <span id="password"></span>  </td>
+      </tr>
+      <td> <input type="submit" value="submit"></td>
+    </table>
+    </form>
+  </center>
+  <script>
+    function validation() {
+      const uname=document.getElementById('user').value;
+      const upass=document.getElementById('pass').value;
+      if(uname=="")
+      {
+        document.getElementById('username').innerHTML="Username required"
+        return false;
+      }
+      if (upass=="")
+      {
+        document.getElementById('password').innerHTML="Password required"
+        return false;
+      }
+      else{
+        return true;
+      }
+    }
+  </script>
+</body>
+</html>
